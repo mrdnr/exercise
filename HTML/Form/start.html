@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="eng">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <title>HTML Lesson</title>
+    <style>
+      label {
+        display: block;
+      }
+    </style>
+  </head>
+
+  <body>
+    <form >
+      <label for="mail">Email:</label>
+      <input type="email" id="mail" >
+      <label for="pass">Password:</label>
+      <input type="password" id="pass" >
+      <label for="name">Name and Lastname:</label>
+      <input type="text" id="name" >
+      <label for="bday">Select Birthday:</label>
+      <input type="date" id="bday" >
+      <label for="phone">Phone Number:</label>
+      <input type="tel" id="phone" >
+      <label for="plan">Free Plan <input type="radio" name="free" id="free"></label>
+      <label for="$5">Starter Plan ($5) <input type="radio" name="free" id="$5"></label>
+      <label for="$10">Pro Plan ($10)<input type="radio" name="free" id="$10" checked></label>
+      <label for="cCard">Credit Card Number:</label>
+      <input type="number" id="cCard" >
+      <label for="cvc">CVC:</label>
+      <input type="number" id="cvc" >
+      <label for="expDate">Expiration Date:</label>
+      <input type="date" id="expDate" >
+      <label for="bAdress">Billing Address:</label>
+      <textarea name="billing" id="bAdress" cols="30" rows="2" placeholder="Please Enter Address"></textarea>
+      <br>
+      <button type="submit">Submit</button>
+    </form>
+  </body>
+</html>
