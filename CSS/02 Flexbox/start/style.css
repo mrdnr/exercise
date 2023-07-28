@@ -1,0 +1,63 @@
+:root {
+    --textcolor: #2b2b2b;
+    --hovercolor: #2b2bb2;
+    --bgcolor: #008a55;
+}
+*{
+    padding: 0px;
+    margin: 0px;
+}
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    border: 1px solid blue;
+    height: 100vh;
+    background-color: var(--bgcolor);
+}
+
+.logo {
+    font-size: larger;
+    font-weight: 600;
+    margin-left: 7%;
+    margin-top: 10%;
+}
+
+.links {
+    margin-left: 10%;
+    margin-top: 15%;
+}
+
+.links ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.links a {
+    text-decoration: none;
+    color: var(--textcolor);
+}
+
+.links a:hover{
+    transition: 0.3s;
+    color: var(--hovercolor);
+}
+
+.user{
+    display: flex;
+    flex-direction: column;
+    margin-top: 280%;
+    align-items: center;
+    justify-content: center;
+}
+.avatar{
+    width: 150px;
+    fill: #971717;
+}
+.user-name{
+    font-size: larger;
+    color: var(--textcolor);
+}
