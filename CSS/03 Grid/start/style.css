@@ -1,0 +1,104 @@
+.style {
+    border-radius: 20%;
+}
+
+.calc {
+    background-color: rgb(11, 70, 70);
+    display: grid;
+    grid-template-areas:
+        "result result result result"
+        "a b c d"
+        "seven eight nine equals"
+        "four five six equals"
+        "one two tree equals"
+        "zero dote ac equals";
+    gap: 1px;
+    width: 400px;
+    height: 400px;
+    border-radius: 15px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.calc div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.item {
+    background-color: white;
+    text-align: center;
+    font-size: larger;
+    font-weight: 600;
+}
+
+.operation {
+    background-color: darkgrey;
+    text-align: center;
+}
+
+.result {
+    background-color: rgb(11, 70, 70);
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    grid-area: result;
+    border-radius: 15px;
+    color: azure;
+}
+
+.equals {
+    background-color: crimson;
+    text-align: center;
+    grid-area: equals;
+    border-bottom-right-radius: 15px;
+}
+
+.seven {
+    grid-area: seven;
+}
+
+.eight {
+    grid-area: eight;
+}
+
+.nine {
+    grid-area: nine;
+}
+
+.four {
+    grid-area: four;
+}
+
+.five {
+    grid-area: five;
+}
+
+.six {
+    grid-area: six;
+}
+
+.one {
+    grid-area: one;
+}
+
+.two {
+    grid-area: two;
+}
+
+.tree {
+    grid-area: tree;
+}
+
+.zero {
+    grid-area: zero;
+    border-bottom-left-radius: 15px;
+}
+
+.dote {
+    grid-area: dote;
+}
+
+.ac {
+    grid-area: ac;
+}
