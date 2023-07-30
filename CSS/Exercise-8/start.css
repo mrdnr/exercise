@@ -1,0 +1,33 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    max-width: max-content;
+}
+
+#green {
+    order: 3;
+    flex: 1;
+}
+
+#yellow {
+    order: 1;
+    flex: 1;
+}
+
+#orange {
+    order: 4;
+    flex: 3;
+    width: 250px;
+}
+
+#red {
+    order: 2;
+    flex: 1;
+}
+
+#blue {
+    order: 5;
+    flex: 1;
+}
