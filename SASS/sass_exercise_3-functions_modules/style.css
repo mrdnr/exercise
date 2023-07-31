@@ -1,0 +1,40 @@
+.main {
+  margin: 0.3125rem;
+  border: 1px solid #fd0000;
+  padding: 0.625rem;
+}
+.main h1 {
+  color: #00fd2a;
+  text-decoration: underline #0019fd 1px;
+  text-underline-offset: 0.5rem;
+  text-align: center;
+}
+.main .subject1 {
+  margin-bottom: 0.625rem;
+  display: flex;
+  justify-content: center;
+}
+.main .subject1 .contentred {
+  color: #fd0000;
+  border: 1px solid #00fd2a;
+  font-size: 1rem;
+  padding: 1.25rem;
+  text-align: center;
+}
+.main .subject1 .contentblue {
+  color: #0019fd;
+  border: 1px solid #00fd2a;
+  font-size: 1rem;
+  padding: 1rem;
+  text-align: center;
+}
+.main .subject2 .contentgreen {
+  color: #00fd2a;
+  border: 1px solid #0019fd;
+  font-size: 1.5rem;
+  font-weight: lighter;
+  padding: 1.25rem;
+  text-align: center;
+}
+
+/*# sourceMappingURL=style.css.map */
