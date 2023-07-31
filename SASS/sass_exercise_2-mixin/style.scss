@@ -1,0 +1,35 @@
+@import "value";
+
+.main {
+    margin: 5px;
+    border: 1px solid $cred;
+    padding: 10px;
+
+    h1 {
+        color: $cgreen;
+        text-decoration: underline $cblue 1px;
+        text-underline-offset: 8px;
+        text-align: center;
+    }
+
+    .subject1 {
+        margin-bottom: 10px;
+        display: flex;
+        justify-content: center;
+
+        .contentred {
+            @include textred;
+        }
+
+        .contentblue {
+            @include textblue;
+        }
+
+    }
+
+    .subject2 {
+        .contentgreen {
+            @include textgreen;
+        }
+    }
+}

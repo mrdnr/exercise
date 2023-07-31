@@ -1,0 +1,40 @@
+.main {
+  margin: 5px;
+  border: 1px solid #fd0000;
+  padding: 10px;
+}
+.main h1 {
+  color: #00fd2a;
+  text-decoration: underline #0019fd 1px;
+  text-underline-offset: 8px;
+  text-align: center;
+}
+.main .subject1 {
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+}
+.main .subject1 .contentred {
+  color: #fd0000;
+  border: 1px solid #00fd2a;
+  font-size: 1rem;
+  padding: 20px;
+  text-align: center;
+}
+.main .subject1 .contentblue {
+  color: #0019fd;
+  border: 1px solid #00fd2a;
+  font-size: 1rem;
+  padding: 20px;
+  text-align: center;
+}
+.main .subject2 .contentgreen {
+  color: #00fd2a;
+  border: 1px solid #0019fd;
+  font-size: 24px;
+  font-weight: lighter;
+  padding: 20px;
+  text-align: center;
+}
+
+/*# sourceMappingURL=style.css.map */

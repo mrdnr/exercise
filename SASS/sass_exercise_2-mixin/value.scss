@@ -1,0 +1,26 @@
+@mixin textred{
+    color: $cred;
+    border: 1px solid $cgreen;
+    font-size: 1rem;
+    padding: 20px;
+    text-align: center;
+}
+@mixin textgreen{
+    color: $cgreen;
+    border: 1px solid $cblue;
+    font-size: 24px;
+    font-weight: lighter;
+    padding: 20px;
+    text-align: center;
+}
+@mixin textblue{
+    color: $cblue;
+    border: 1px solid $cgreen;
+    font-size: 1rem;
+    padding: 20px;
+    text-align: center;
+}
+
+$cred: #fd0000;
+$cblue:#0019fd;
+$cgreen:#00fd2a;
