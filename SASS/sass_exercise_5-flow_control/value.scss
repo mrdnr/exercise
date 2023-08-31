@@ -29,11 +29,3 @@ $cgreen:#00fd2a;
 @function rem($size) {
     @return (($size / 16) * 1rem);
 }
-
-@function box($number){
-    @if $number == 10{
-        .#{$fs}{
-
-        }
-    }
-}

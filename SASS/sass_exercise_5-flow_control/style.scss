@@ -1,0 +1,66 @@
+@use 'sass:math';
+@import "value";
+
+.main {
+    margin: rem(5);
+    border: 1px solid $cred;
+    padding: rem(10);
+
+    h1 {
+        color: $cgreen;
+        text-decoration: underline $cblue 1px;
+        text-underline-offset: rem(8);
+        text-align: center;
+    }
+    h2{
+        @extend h1;
+        text-decoration: none;
+        border: rem(1) solid $cred;
+        display: inline-block;
+        padding: rem(8);
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .subject1 {
+        margin-bottom: rem(10);
+        display: flex;
+        justify-content: center;
+
+        .contentred {
+            @include textred;
+        }
+
+        .contentblue {
+            @include textblue;
+        }
+
+    }
+    .boxs{
+        display: flex;
+        justify-content: center;
+        margin: rem(10);
+        background: linear-gradient(to right bottom, white, black);
+        flex-wrap: nowrap;
+        .fs{
+            border: rem(1) solid $cred;
+            width: rem(45);
+            height: rem(45);
+        }
+        .low{
+            font-size: rem(16);
+        }
+        .med{
+            font-size: rem(32);
+        }
+        .high{
+            font-size: rem(48);
+        }
+    }
+    .subject2 {
+        .contentgreen {
+            @include textgreen;
+        }
+    }
+}
