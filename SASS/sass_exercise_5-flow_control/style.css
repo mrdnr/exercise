@@ -1,70 +1,179 @@
-.main {
-  margin: 0.3125rem;
-  border: 1px solid #fd0000;
-  padding: 0.625rem;
+.exercise {
+  border: 1px solid red;
+  width: 78.125rem;
+  display: flex;
+  justify-content: center;
 }
-.main h1, .main h2 {
-  color: #00fd2a;
-  text-decoration: underline #0019fd 1px;
-  text-underline-offset: 0.5rem;
-  text-align: center;
+
+.subtitle h2, h1 {
+  display: flex;
+  flex-direction: column;
+  color: green;
+  justify-content: center;
+  align-items: center;
+  text-decoration: underline;
+  text-underline-offset: 0.625rem;
+  text-decoration-color: blue;
+  text-decoration-thickness: 2px;
 }
-.main h2 {
-  text-decoration: none;
-  border: 0.0625rem solid #fd0000;
+
+.subtitle {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+.subtitle h2 {
   display: inline-block;
-  padding: 0.5rem;
-  position: relative;
-  left: 50%;
-  transform: translateX(-50%);
-}
-.main .subject1 {
-  margin-bottom: 0.625rem;
-  display: flex;
-  justify-content: center;
-}
-.main .subject1 .contentred {
-  color: #fd0000;
-  border: 1px solid #00fd2a;
-  font-size: 1rem;
-  padding: 1.25rem;
-  text-align: center;
-}
-.main .subject1 .contentblue {
-  color: #0019fd;
-  border: 1px solid #00fd2a;
-  font-size: 1rem;
   padding: 1rem;
+  border: 0.0625rem solid red;
   text-align: center;
 }
-.main .boxs {
+
+section {
   display: flex;
-  justify-content: center;
-  margin: 0.625rem;
-  background: linear-gradient(to right bottom, white, black);
-  flex-wrap: nowrap;
+  flex-direction: row;
+  margin: 1.5%;
 }
-.main .boxs .fs {
-  border: 0.0625rem solid #fd0000;
-  width: 2.8125rem;
-  height: 2.8125rem;
-}
-.main .boxs .low {
-  font-size: 1rem;
-}
-.main .boxs .med {
-  font-size: 2rem;
-}
-.main .boxs .high {
-  font-size: 3rem;
-}
-.main .subject2 .contentgreen {
-  color: #00fd2a;
-  border: 1px solid #0019fd;
-  font-size: 1.5rem;
-  font-weight: lighter;
-  padding: 1.25rem;
+section article {
+  display: flex;
+  height: 7.5rem;
+  align-items: center;
+  padding: 1.5%;
   text-align: center;
+}
+section .left, section .mid-right {
+  color: blue;
+  border: 1px solid green;
+}
+section .mid-left, section .right {
+  color: red;
+  border: 1px solid green;
+}
+section .bot {
+  color: green;
+  border: 1px solid blue;
+  font-size: 1.5rem;
+  width: 100%;
+}
+
+.fs-1rem {
+  width: 45px;
+  height: 45px;
+  border: 1px solid red;
+  font-size: 1rem;
+  margin-right: 1.5%;
+}
+
+.fs-2rem {
+  width: 45px;
+  height: 45px;
+  border: 1px solid red;
+  font-size: 2rem;
+  margin-right: 1.5%;
+}
+
+.fs-3rem {
+  width: 45px;
+  height: 45px;
+  border: 1px solid red;
+  font-size: 3rem;
+  margin-right: 1.5%;
+}
+
+.numbers div:nth-child(1) {
+  background-color: rgb(255, 255, 255);
+  color: rgb(13, 12, 12);
+}
+
+.numbers div:nth-child(2) {
+  background-color: #f2f2f2;
+  color: #1a1818;
+}
+
+.numbers div:nth-child(3) {
+  background-color: #e6e6e6;
+  color: #282424;
+}
+
+.numbers div:nth-child(4) {
+  background-color: #d9d9d9;
+  color: #353131;
+}
+
+.numbers div:nth-child(5) {
+  background-color: #cccccc;
+  color: #423d3d;
+}
+
+.numbers div:nth-child(6) {
+  background-color: #bfbfbf;
+  color: #4f4949;
+}
+
+.numbers div:nth-child(7) {
+  background-color: #b3b3b3;
+  color: #5d5555;
+}
+
+.numbers div:nth-child(8) {
+  background-color: #a6a6a6;
+  color: #6a6262;
+}
+
+.numbers div:nth-child(9) {
+  background-color: #999999;
+  color: #776e6e;
+}
+
+.numbers div:nth-child(10) {
+  background-color: blue;
+  color: red;
+}
+
+.numbers div:nth-child(11) {
+  background-color: gray;
+  color: #918787;
+}
+
+.numbers div:nth-child(12) {
+  background-color: #737373;
+  color: #9d9595;
+}
+
+.numbers div:nth-child(13) {
+  background-color: #666666;
+  color: #a9a2a2;
+}
+
+.numbers div:nth-child(14) {
+  background-color: #595959;
+  color: #b5afaf;
+}
+
+.numbers div:nth-child(15) {
+  background-color: #4d4d4d;
+  color: #c2bcbc;
+}
+
+.numbers div:nth-child(16) {
+  background-color: #404040;
+  color: #cecaca;
+}
+
+.numbers div:nth-child(17) {
+  background-color: #333333;
+  color: #dad7d7;
+}
+
+.numbers div:nth-child(18) {
+  background-color: #262626;
+  color: #e6e4e4;
+}
+
+.numbers div:nth-child(19) {
+  background-color: #1a1a1a;
+  color: #f3f1f1;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -1,31 +1,3 @@
-@use 'sass:math';
-@mixin textred{
-    color: $cred;
-    border: 1px solid $cgreen;
-    font-size: 1rem;
-    padding: rem(20);
-    text-align: center;
-}
-@mixin textgreen{
-    color: $cgreen;
-    border: 1px solid $cblue;
-    font-size: rem(24);
-    font-weight: lighter;
-    padding: rem(20);
-    text-align: center;
-}
-@mixin textblue{
-    color: $cblue;
-    border: 1px solid $cgreen;
-    font-size: rem(16);
-    padding: rem(16);
-    text-align: center;
-}
-
-$cred: #fd0000;
-$cblue:#0019fd;
-$cgreen:#00fd2a;
-
-@function rem($size) {
-    @return (($size / 16) * 1rem);
-}
+$color:blue;
+ $border-color: 1px solid green;
+$font-size:16px;    

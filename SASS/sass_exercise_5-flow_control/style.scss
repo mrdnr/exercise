@@ -1,66 +1,145 @@
-@use 'sass:math';
-@import "value";
+@use"value.scss" as m;
+@use "sass:color";
+@function rem($num){
+   
+    $calc:calc($num/16) +  rem;
+    @return $calc;
+}
 
-.main {
-    margin: rem(5);
-    border: 1px solid $cred;
-    padding: rem(10);
 
-    h1 {
-        color: $cgreen;
-        text-decoration: underline $cblue 1px;
-        text-underline-offset: rem(8);
-        text-align: center;
-    }
-    h2{
-        @extend h1;
-        text-decoration: none;
-        border: rem(1) solid $cred;
-        display: inline-block;
-        padding: rem(8);
-        position: relative;
-        left: 50%;
-        transform: translateX(-50%);
+.exercise {
+    border: 1px solid red;
+    width: rem(1250);
+    display: flex;
+    justify-content: center;
+
     }
 
-    .subject1 {
-        margin-bottom: rem(10);
+
+    %exercise-title {
         display: flex;
+        flex-direction: column;
+        
+        color: green;
+        justify-content: center;
+        align-items: center;
+        text-decoration: underline;
+        text-underline-offset: rem(10);
+        text-decoration-color:blue;
+        text-decoration-thickness: 2px;
+
+      
+       
+    }   
+    h1{
+        @extend %exercise-title;
+    }
+    .subtitle{
+        display: flex;
+        width: 100%;
+        align-items: center;
         justify-content: center;
 
-        .contentred {
-            @include textred;
+        h2{
+            @extend %exercise-title;
+            display: inline-block;
+            padding: rem(16);
+            border: rem(1) solid red;
+            text-align: center;
+           
         }
-
-        .contentblue {
-            @include textblue;
-        }
-
     }
-    .boxs{
+    
+
+
+section{
+    display: flex;
+    flex-direction: row;
+    margin:1.5%;
+        article{
         display: flex;
-        justify-content: center;
-        margin: rem(10);
-        background: linear-gradient(to right bottom, white, black);
-        flex-wrap: nowrap;
-        .fs{
-            border: rem(1) solid $cred;
-            width: rem(45);
-            height: rem(45);
+    height: rem(120);
+    align-items: center;
+    padding: 1.5%;
+    text-align: center;
+    
+    
+
+}
+
+.left, .mid-right{
+    color:m.$color;
+    border: m.$border-color
+
+}
+.mid-left, .right{
+    color:red;
+    border: m.$border-color
+}
+
+
+.bot{
+    color:green;
+    border: 1px solid blue;
+    font-size: rem(24);
+    width:100%
+}
+    }
+
+    @for $index from 1 to 4{
+       
+
+    
+        @if $index == 1 {
+            .fs-#{$index}rem {
+                    width: 45px;
+                    height: 45px;
+                    border: 1px solid red;
+                    font-size: #{$index}rem;
+                    margin-right:1.5%;
+                             
+                }
         }
-        .low{
-            font-size: rem(16);
+        @else if $index == 2 {
+            .fs-#{$index}rem {
+                    width: 45px;
+                    height: 45px;
+                    border: 1px solid red;
+                    font-size: #{$index}rem;
+                    margin-right:1.5%;
+                    
+            }
         }
-        .med{
-            font-size: rem(32);
+        @else {
+            .fs-#{$index}rem {
+                    width: 45px;
+                    height: 45px;
+                    border: 1px solid red;
+                    font-size: #{$index}rem;
+                    margin-right:1.5%;
+                                   
+            }
         }
-        .high{
-            font-size: rem(48);
+}
+
+
+$background-color: rgb(255, 255, 255);
+$text-color: rgb(13, 12, 12);
+$color-adjust-amount: 5%;
+
+@for $index from 1 to 20 {
+    @if $index ==10 {
+        .numbers div:nth-child(#{$index}) {
+            background-color: blue;
+            color: red;
         }
     }
-    .subject2 {
-        .contentgreen {
-            @include textgreen;
-        }
+    @else {
+    .numbers div:nth-child(#{$index}) {
+        background-color: $background-color;
+        color: $text-color;
     }
+    }
+  $background-color: color.adjust($background-color, $lightness: -$color-adjust-amount);
+  $text-color: color.adjust($text-color, $lightness: $color-adjust-amount);
 }

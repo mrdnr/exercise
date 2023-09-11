@@ -3,7 +3,8 @@
 }
 .main h1 {
   color: green;
-  text-decoration: underline blue 2px;
+  -webkit-text-decoration: underline blue 2px;
+          text-decoration: underline blue 2px;
   text-align: center;
 }
 .main .subject {
@@ -22,5 +23,3 @@
 .main .subject .content2 {
   color: red;
 }
-
-/*# sourceMappingURL=style.css.map */
