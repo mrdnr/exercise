@@ -1,0 +1,55 @@
+<html>
+  <body>
+    <div id="container">
+      <form>
+        <div>
+          <label>Title</label>
+          <input type="text" id="todo-title" />
+        </div>
+        <div>
+          <label>Completed</label>
+          <input type="checkbox" id="todo-completed" />
+        </div>
+
+        <button type="submit" id="submit-todo"></button>
+      </form>
+    </div>
+  </body>
+</html>
+
+<script>
+  const postEle = document.getElementById("postForm");
+  const title = document.getElementById("todo-title");
+  const completed = document.getElementById("todo-completed");
+  const logContainer = document.getElementById("logContainer");
+
+  postEle.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    if (!completed.checked) return;
+
+    const title = title.value;
+    const postData = {
+      userId: 125,
+      title: title,
+    };
+
+    const postedData = await post(url, postData);
+    const log = document.createElement('p');
+    log.innerHTML = `${JSON.stringify(postedData)}`
+    logContainer.appendChild(log);
+  });
+
+  const url = "https://jsonplaceholder.typicode.com/posts";
+
+  async function post(url, data = {}) {
+    const res = await fetch(url, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    }).then((response) => response.json());
+
+    return res;
+  }
+</script>
