@@ -1,0 +1,28 @@
+<html>
+  <body>
+    <div id="container" style="display: flex; align-items: center;"></div>
+  </body>
+</html>
+
+<script>
+  const container = document.getElementById("container");
+  async function networkReq(){
+    const url = "https://jsonplaceholder.typicode.com/todos/4"
+    const data  = await fetch(url)
+    .then((response)=>response.json());
+    return data;
+  }
+
+  async function display(){
+    const data = await networkReq();
+    const title = document.createElement("h2");
+    const checkbox = document.createElement("input");
+    title.innerText = data.title;
+    checkbox.type = "checkbox";
+    checkbox.checked = data.completed;
+    container.appendChild(title);
+    container.appendChild(checkbox);
+  }
+
+  display();
+</script>

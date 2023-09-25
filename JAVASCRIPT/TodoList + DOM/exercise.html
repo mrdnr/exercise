@@ -1,0 +1,37 @@
+<html>
+  <body>
+    <div id="container" style="display: flex; align-items: center;"></div>
+  </body>
+</html>
+
+<script>
+  const container = document.getElementById("container");
+  const url = "https://jsonplaceholder.typicode.com/todos";
+  
+  async function getData(){
+    const response = await fetch(url)
+    .then((response)=>response.json());
+    return response;
+  }
+
+  async function display(){
+    const data = await getData();
+    const list = document.createElement("ul");
+    list.className = "todo-list";
+
+    data.foreach((item)=>{
+      const listItem = document.createElement("li");
+      console.log(item.completed);
+      listItem.className("lsit-item");
+      listItem.innerHTML`
+        <input type="checkbox" ${item.completed ? 'checked' : ''}>
+        <p>ID: ${item.id}</p>
+        <h2>${item.title}</h2>
+        `;
+      list.appendChild(listItem);
+    })
+    container.appendChild(list);
+  }
+
+  display();
+</script>
