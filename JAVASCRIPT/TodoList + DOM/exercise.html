@@ -19,11 +19,11 @@
     const list = document.createElement("ul");
     list.className = "todo-list";
 
-    data.foreach((item)=>{
+    data.forEach((item)=>{
       const listItem = document.createElement("li");
       console.log(item.completed);
-      listItem.className("lsit-item");
-      listItem.innerHTML`
+      listItem.className="lsit-item";
+      listItem.innerHTML=`
         <input type="checkbox" ${item.completed ? 'checked' : ''}>
         <p>ID: ${item.id}</p>
         <h2>${item.title}</h2>
