@@ -1,7 +1,8 @@
+<!DOCTYPE html>
 <html>
   <body>
     <div id="container">
-      <form>
+      <form id="postForm">
         <div>
           <label>Title</label>
           <input type="text" id="todo-title" />
@@ -10,16 +11,16 @@
           <label>Completed</label>
           <input type="checkbox" id="todo-completed" />
         </div>
-
-        <button type="submit" id="submit-todo"></button>
+        <button type="submit" id="submit-todo">Submit</button>
       </form>
     </div>
+    <div id="logContainer"></div>
   </body>
 </html>
 
 <script>
   const postEle = document.getElementById("postForm");
-  const title = document.getElementById("todo-title");
+  const titleInput = document.getElementById("todo-title");
   const completed = document.getElementById("todo-completed");
   const logContainer = document.getElementById("logContainer");
 
@@ -27,10 +28,10 @@
     e.preventDefault();
     if (!completed.checked) return;
 
-    const title = title.value;
+    const todoTitle = titleInput.value;
     const postData = {
       userId: 125,
-      title: title,
+      title: todoTitle,
     };
 
     const postedData = await post(url, postData);
@@ -49,7 +50,8 @@
       },
       body: JSON.stringify(data),
     }).then((response) => response.json());
-
+    console.log(res);
     return res;
   }
+  
 </script>
