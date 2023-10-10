@@ -1,0 +1,1 @@
+Try to replicate the layout in assets/layout3.png using HTML and Tailwind. Try to make a mobile version as well, with 768px as a breakpoint.
