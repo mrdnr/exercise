@@ -1,0 +1,1 @@
+Try to replicate the layout in assets/layout2.png using only Tailwind
