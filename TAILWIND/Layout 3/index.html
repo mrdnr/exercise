@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Layout 3</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="w-screen min-h-screen px-20 pt-10 overflow-x-hidden">
+  <nav id="navbar" class="w-full">
+    <ul class="flex items-center gap-6 border-solid border-2 rounded-md py-3 px-11 shadow-lg">
+      <a class="font-semibold font-sans text-lg" href="Projects" target="_blank">Projects</a>
+      <a class="font-semibold font-sans text-lg" href="About" target="_blank">About</a>
+      <a class="font-semibold font-sans text-lg" href="Contact" target="_blank">Contact</a>
+    </ul>
+  </nav>
+  <main>
+    <section id="title" class="flex flex-row justify-between w-full">
+      <div id="promotion" class="pt-10">
+        <h1 class="font-medium text-6xl"><span class="text-6xl font-bold">John Doe</span> web <br>developer</h1>
+        <p class="pt-10 font-semibold font-sans text-lg">I'm a web developer with more than 10 years of experience</p>
+        <button class="mt-10 bg-purple-500 w-40 h-8 text-white rounded-2xl">Hire me</button>
+        <div id="skills" class="mt-10 flex gap-4">
+          <span class="bg-pink-500 h-8 w-16 items-center justify-center flex rounded-lg text-white">HTML</span>
+          <span class="bg-orange-500 h-8 w-12 items-center justify-center flex rounded-lg text-white">CSS</span>
+          <span class="bg-fuchsia-500 h-8 w-24 items-center justify-center flex rounded-lg text-white">javascript</span>
+        </div>
+      </div>
+      <img class="w-96" src="./assets/image.png" id="foto">
+    </section>
+    <section id="projects" class="mt-20">
+      <div id="menu" class="flex flex-row gap-5">
+        <h2 class="font-bold text-xl font-sans">Latest Projects</h2>
+        <select name="menu" id="menu" class="w-24 border-solid border-2 rounded-md">
+          <option value="">All</option>
+          <option value="">...</option>
+          <option value="">...</option>
+        </select>
+      </div>
+      <div id="cards" class="mt-10 flex flex-row justify-start gap-8 pr-20">
+        <div id="card1" class="border-solid max-w-sm rounded-md shadow-xl p-4 ">
+          <h3 class="font-bold text-xl font-sans text-slate-600">Noteworthy techjnology <br>acquisitions 2021</h3>
+          <p class="pt-4 text-slate-500 text-base">Here are the biggest enterprise technology acquisitions of 2021 so
+            far, in reverse chronological order</p>
+        </div>
+        <div id="card2" class="border-solid max-w-sm rounded-md shadow-xl p-4 ">
+          <h3 class="font-bold text-xl font-sans text-slate-600">Noteworthy techjnology <br>acquisitions 2021</h3>
+          <p class="pt-4 text-slate-500 text-base">Here are the biggest enterprise technology acquisitions of 2021 so
+            far, in reverse chronological order</p>
+        </div>
+        <div id="card3" class="border-solid max-w-sm rounded-md shadow-xl p-4 ">
+          <h3 class="font-bold text-xl font-sans text-slate-600">Noteworthy techjnology <br>acquisitions 2021</h3>
+          <p class="pt-4 text-slate-500 text-base">
+            Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order</p>
+        </div>
+      </div>
+    </section>
+    <section id="subs" class="flex flex-row justify-between mt-10">
+      <div id="info">
+        <h4 class="font-bold text-xl">Subscribe to my newsletter</h4>
+        <p class="pt-10 font-semibold font-sans">I write about web development, desing and other cool stuff.</p>
+      </div>
+      <div id="mail" class="flex gap-4 mt-10 mr-4">
+          <input type="email" class="w-96 h-11 border rounded-md shadow-xl p-4"id="email" placeholder="Your email">
+          <button type="submit" class="bg-purple-500 w-72 h-11 text-white rounded-2xl">Subscribe</button>
+      </div>
+    </section>
+  </main>
+  <footer id="footer" class="flex flex-row justify-between mt-14 font-sans font-semibold text-base mb-12">
+    <ul class="flex flex-row gap-6">
+      <li>Linkedin</li>
+      <li>Github</li>
+      <li>Twitter</li>
+      <li>Instagram</li>
+    </ul>
+    <p id="copyright">&copy; 2023 John Doe</p>
+  </footer>
+</body>
+
+</html>
