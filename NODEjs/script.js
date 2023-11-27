@@ -1,5 +1,11 @@
-const greet = require("./exercise3.js");
+// const greet = require("./exercise3.js");
 
-const greetingMessage = greet('John');
+// const greetingMessage = greet('John');
 
-console.log(greetingMessage);
+// console.log(greetingMessage);
+
+//////////////////////////////////////////////////////////
+
+import say from './exercise4.js';
+
+say();
