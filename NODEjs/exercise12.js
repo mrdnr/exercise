@@ -37,7 +37,7 @@ app.get('/planets/:id', (req, res) => {
   res.json(planet);
 });
 
-asyncErrors(app);
+// asyncErrors(app);
 
 app.use((err, req, res, next) => {
   console.error(err.stack);
