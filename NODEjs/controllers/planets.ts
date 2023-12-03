@@ -1,78 +1,66 @@
 import { Request, Response } from 'express';
+import { db } from '../db';
 
 
-let planets: Planet[] = [
-  { id: 1, name: 'Mercury' },
-  { id: 2, name: 'Venus' },
-  { id: 3, name: 'Earth' },
-
-];
-
-interface Planet {
-  id: number;
-  name: string;
-}
-
-
-export const getAll = (req: Request, res: Response): void => {
-  res.json(planets);
-};
-
-
-export const getOneById = (req: Request, res: Response): void => {
-  const planetId: number = parseInt(req.params.id, 10);
-  const planet = planets.find((p) => p.id === planetId);
-
-  if (planet) {
-    res.json(planet);
-  } else {
-    res.status(404).json({ message: 'Gezegen bulunamadı' });
+export const getAll = async (req: Request, res: Response): Promise<void> => {
+  try {
+    const planets = await db.any('SELECT * FROM planets');
+    res.json(planets);
+  } catch (error) {
+    res.status(500).json({ message: 'Server error' });
   }
 };
 
 
-export const create = (req: Request, res: Response): void => {
+export const getOneById = async (req: Request, res: Response): Promise<void> => {
+  const planetId: number = parseInt(req.params.id, 10);
+
+  try {
+    const planet = await db.one('SELECT * FROM planets WHERE id=$1', planetId);
+    res.json(planet);
+  } catch (error) {
+    res.status(404).json({ message: 'No planets found' });
+  }
+};
+
+
+export const create = async (req: Request, res: Response): Promise<void> => {
   const { name } = req.body;
 
   if (!name) {
-    res.status(400).json({ message: 'Gezegen adı zorunludur' });
+    res.status(400).json({ message: 'Planet name is mandatory' });
     return;
   }
 
-  const newPlanet: Planet = {
-    id: planets.length + 1,
-    name,
-  };
-
-  planets = [...planets, newPlanet];
-
-  res.status(201).json(newPlanet);
+  try {
+    const newPlanet = await db.one('INSERT INTO planets (name) VALUES ($1) RETURNING *', name);
+    res.status(201).json(newPlanet);
+  } catch (error) {
+    res.status(500).json({ message: 'Server error' });
+  }
 };
 
 
-export const updateById = (req: Request, res: Response): void => {
+export const updateById = async (req: Request, res: Response): Promise<void> => {
   const planetId: number = parseInt(req.params.id, 10);
   const { name } = req.body;
 
-  const updatedPlanets = planets.map((planet) =>
-    planet.id === planetId ? { ...planet, name } : planet
-  );
-
-  planets = updatedPlanets;
-
-  res.json({ message: 'Gezegen başarıyla güncellendi' });
+  try {
+    await db.none('UPDATE planets SET name=$2 WHERE id=$1', [planetId, name]);
+    res.json({ message: 'Planet successfully updated' });
+  } catch (error) {
+    res.status(404).json({ message: 'No planets found' });
+  }
 };
 
-// ID'ye göre bir gezegeni sil
-export const deleteById = (req: Request, res: Response): void => {
+
+export const deleteById = async (req: Request, res: Response): Promise<void> => {
   const planetId: number = parseInt(req.params.id, 10);
 
-  const updatedPlanets = planets.filter((planet) => planet.id !== planetId);
-
-  if (updatedPlanets.length < planets.length) {
-    planets = updatedPlanets;
-    res.json({ message: 'Gezegen başarıyla silindi' });
-  } else {
-    res.status(404).json({ message: 'Gezegen bulunamadı' });
+  try {
+    await db.none('DELETE FROM planets WHERE id=$1', planetId);
+    res.json({ message: 'Planet successfully erased' });
+  } catch (error) {
+    res.status(404).json({ message: 'No planets found' });
   }
 };
